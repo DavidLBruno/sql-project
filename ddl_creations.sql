@@ -65,6 +65,13 @@ CREATE TABLE Entrada (
     CONSTRAINT fk_Estadio_Entrada FOREIGN KEY (estadioID) REFERENCES Estadio(estadioID),
 );
 
-
+CREATE TABLE Recital (
+    recitalID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
+    fecha DATE NOT NULL,
+    bandaID INT NOT NULL,
+    estadioID INT NOT NULL,
+    CONSTRAINT fk_Banda_Recital FOREIGN KEY (bandaID) REFERENCES Banda(bandaID),
+    CONSTRAINT fk_Estadio_Recital FOREIGN KEY (estadioID) REFERENCES Estadio(estadioID),
+);
 
 
