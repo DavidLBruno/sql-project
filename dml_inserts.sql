@@ -34,13 +34,21 @@ VALUES ('Defensores del Bajo'),
 		('Tan Bionica'),
 		('AC/DC');
 
-INSERT INTO Seccion (nombre, capacidad_maxima, precio, ofrece_servicios, estadioID)
-VALUES ('Campo delantero', 1000, 50.0, 0, 1),
-       ('Campo trasero', 2000, 60.0, 0, 1),
-       ('Platea baja 1', 1500, 55.0, 1, 1),
-       ('Platea baja 2', 1800, 65.0, 1, 1),
-       ('Platea alta 1', 1200, 70.0, 1, 1),
-       ('Platea alta 2', 2200, 75.0, 1, 1)
+INSERT INTO Tipo_Seccion(tipoSeccionID, nombre)
+VALUES ('Campo delantero'),
+       ('Campo trasero'),
+       ('Platea baja 1'),
+       ('Platea baja 2'),
+       ('Platea alta 1'),
+       ('Platea alta 2')
+
+INSERT INTO Seccion (ofrece_servicios, estadioID,tipoSeccionID,precio)
+VALUES (0, 1, 1,60000),
+       (0, 2, 1,65000),
+       (1, 2, 3, 90000),
+       (0, 2, 1, 50000),
+       (1, 3, 5,65000),
+       (0, 3, 1,70000),
 
 -- Asientos hasta A10, B10 y C10 en Platea baja 1
 INSERT INTO Asiento (fila, columna, esta_vendido, seccionID)
