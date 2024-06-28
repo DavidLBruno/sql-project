@@ -22,11 +22,17 @@ VALUES ('12345678', 'Juan', 'Pérez', 'juan.perez@example.com'),
 
 INSERT INTO Estadio (nombre)
 VALUES ('Defensores del Bajo'),
-	   ('Luna Park');
+	   ('Luna Park'),
+	   ('El Monumental'),
+	   ('Movistar Arena'),
+	   ('Estadio unico de la plata');
 
-INSERT INTO Banda (nombre)
-VALUES ('El Cuarteto de 3'),
-       ('Iron Maiden')
+	INSERT INTO Banda (nombre)
+	VALUES ('El Cuarteto de 3'),
+		('Iron Maiden'),
+		('Las Pastillas Del Abuelo'),
+		('Tan Bionica'),
+		('AC/DC');
 
 INSERT INTO Seccion (nombre, capacidad_maxima, precio, ofrece_servicios, estadioID)
 VALUES ('Campo delantero', 1000, 50.0, 0, 1),
