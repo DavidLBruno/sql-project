@@ -1,0 +1,2 @@
+1) La base de datos no esta en tercera forma normal ( 3FN ) ya que las tablas Sección, Asiento y Estadio tienen atributos que dependen de manera transitiva de la clave primaria.
+
