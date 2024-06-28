@@ -1,0 +1,4 @@
+CREATE PROCEDURE RealizarCompra
+AS
+BEGIN
+END;
