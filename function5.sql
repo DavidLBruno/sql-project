@@ -1,5 +1,3 @@
--- 5. Escriba una función que recibiendo el nombre de una banda devuelva un identificador de esta.
-
 CREATE FUNCTION getBandaID(@nombre VARCHAR(100))
 RETURNS INT
 AS
@@ -12,5 +10,4 @@ BEGIN
 END;
 GO
 
-SELECT nombre, dbo.getBandaID(nombre) AS 'bandaID'
-FROM Banda;
+SELECT dbo.getBandaID('El Cuarteto de 3') AS 'bandaID';
