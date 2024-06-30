@@ -69,7 +69,8 @@ CREATE TABLE Recital (
 );
 
 CREATE TABLE Entrada (
-    DNI_propietario VARCHAR(15) NOT NULL PRIMARY KEY,
+    entradaId INT IDENTITY(1,1) PRIMARY KEY,
+    DNI_propietario VARCHAR(15) NOT NULL,
     compraID INT NOT NULL,
     asientoID INT NULL,
     seccionID INT NOT NULL,
