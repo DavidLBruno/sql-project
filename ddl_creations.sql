@@ -11,7 +11,7 @@ CREATE TABLE Cliente (
 
 CREATE TABLE Estadio (
     estadioID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
-    nombre VARCHAR(100)
+    nombre VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE Tipo_Seccion (
@@ -26,6 +26,7 @@ CREATE TABLE Seccion (
     estadioID INT NOT NULL,
     tipoSeccionID INT NOT NULL,
     precio FLOAT NOT NULL,
+    capacidad_maxima INT NOT NULL,
     CONSTRAINT FK_Estadio FOREIGN KEY (estadioID) REFERENCES Estadio(estadioID),
     CONSTRAINT FK_TipoSeccion FOREIGN KEY (tipoSeccionID) REFERENCES Tipo_Seccion(tipoSeccionID),
     CONSTRAINT CK_Precio check (precio >= 0),
@@ -37,13 +38,13 @@ CREATE TABLE Banda (
 );
 
 CREATE TABLE Ubicacion_Asiento (
-    ubicacionID INT IDENTITY(1,1) PRIMARY KEY,
+    ubicacionID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     fila VARCHAR(50) NOT NULL,
     columna VARCHAR(50) NOT NULL,
 );
 
 CREATE TABLE Asiento (
-    asientoID INT IDENTITY(1,1) PRIMARY KEY,
+    asientoID INT IDENTITY(1,1) NOT NULL PRIMARY KEY,
     esta_vendido BIT NOT NULL DEFAULT 0,
     seccionID INT NOT NULL,
     ubicacionID INT NOT NULL,

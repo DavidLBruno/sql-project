@@ -14,7 +14,7 @@ BEGIN
 
     RETURN @totalRecaudado;
 END;
-GO;
+GO
 
 
 SELECT dbo.TotalRecaudado(1,'2022-06-01','2024-08-08');

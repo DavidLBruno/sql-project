@@ -34,21 +34,21 @@ VALUES ('Defensores del Bajo'),
 		('Tan Bionica'),
 		('AC/DC');
 
-INSERT INTO Tipo_Seccion(tipoSeccionID, nombre)
+INSERT INTO Tipo_Seccion(nombre)
 VALUES ('Campo delantero'),
        ('Campo trasero'),
        ('Platea baja 1'),
        ('Platea baja 2'),
        ('Platea alta 1'),
-       ('Platea alta 2')
+       ('Platea alta 2');
 
-INSERT INTO Seccion (ofrece_servicios, estadioID,tipoSeccionID,precio)
-VALUES (0, 1, 1,60000),
-       (0, 2, 1,65000),
-       (1, 2, 3, 90000),
-       (0, 2, 1, 50000),
-       (1, 3, 5,65000),
-       (0, 3, 1,70000),
+INSERT INTO Seccion (ofrece_servicios, estadioID,tipoSeccionID,precio, capacidad_maxima)
+VALUES (0, 1, 1,60000, 20000),
+       (0, 2, 1,65000, 5000),
+       (1, 2, 3, 90000, 5000),
+       (0, 2, 1, 50000, 5000),
+       (1, 3, 5,65000, 10000),
+       (0, 3, 1,70000, 25000);
 
 INSERT INTO Ubicacion_asiento (fila, columna)
 VALUES
@@ -120,50 +120,3 @@ SELECT
     ABS(CHECKSUM(NEWID())) % 6 + 1, -- Valor aleatorio entre 1 y 6
     ubicacionID
 FROM Ubicacion_asiento;
-
-
---INSERT INTO Compra (fechaCompra, DNI)
---VALUES ('2024-05-24', '12345678'),
---		('2024-05-12', '34567890'),
---		('2024-03-01', '45678901'), -- mismo cliente hace 2 compras en distintos dias
---		('2024-02-05', '45678901'),
---		('2024-02-28', '89012345'),
---		('2024-03-23', '67890123'),
---		('2024-04-27', '90123456');
-
--- Entradas de Campo Delantero
---INSERT INTO Entrada (compraID, bandaID, asientoID, seccionID, estadioID, DNI_propietario, precio)
---VALUES  (1, 1, null, 1, 1, '12345678', 150.00), -- misma entrada para misma banda, seccion y dueño
---		(1, 1, null, 1, 1, '34567890', 250.00),
---		(2, 1, null, 1, 1, '32067890', 250.00),
---		(3, 1, null, 1, 1, '39867890', 250.00);
-
--- Entradas de  Campo Trasero
---INSERT INTO Entrada (compraID, bandaID, asientoID, seccionID, estadioID, DNI_propietario, precio)
---VALUES  (1, 1, null, 2, 1, '23456789', 200.00),
---		(3, 1, null, 2, 1, '43456789', 200.00),
---		(4, 1, null, 2, 1, '14345678', 150.00);
-
--- Entradas de  Platea baja 1
---INSERT INTO Entrada (compraID, bandaID, asientoID, seccionID, estadioID, DNI_propietario, precio)
---VALUES  (3, 1, 1, 3, 1, '23454789', 300.00),
---		(4, 1, 2, 3, 1, '12345478', 450.00);
-
--- Entradas de  Platea baja 2
---INSERT INTO Entrada (compraID, bandaID, asientoID, seccionID, estadioID, DNI_propietario, precio)
---VALUES  (3, 1, 2, 4, 1, '43454749', 400.00),
---		(4, 1, 3, 4, 1, '12345466', 450.00);
-
---------------------------------
-
--- Verificaciones
---select * from Cliente
---select * from Estadio
---select * from Banda
---select * from Seccion
---select * from Asiento
---select * from Compra
---select * from Entrada
-
-
-
